@@ -4,20 +4,22 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {	
-	int a,b;
-	char c;
+	int answer = 59;
+	int trial;
+	int guess;
 	
-	printf("enter the calculation : ");
-	scanf("%i %c %i", &a, &c, &b);
+	do{
+		printf("Guess a number : ");
+		scanf("%i", &guess);
+		trial++;
+		if (guess < answer)
+			printf("low!\n");
+		else if (guess > answer)
+			printf("high!\n");
+	}
+	while( guess != answer);
 	
-	if(c == '+')
-	printf(" = %i\n", a+b);
-	else if (c == '-')
-	printf(" = %i\n", a-b);
-	else if (c == '*')
-	printf(" = %i\n", a*b);
-	else if (c == '/');
-	printf(" = %i\n", a/b);
-
+	printf("congratulation! trials : %i\n", trial);
+	
 	return 0;
 }
